@@ -1,5 +1,5 @@
 from django.db import models
-from django.core.urlresolvers import reverse 
+from django.urls import reverse 
 
 # Create your models here.
 
@@ -19,4 +19,4 @@ class Post(models.Model):
         return u'%s'% self.title
     def get_absolute_url(self):
         return reverse('blog.view.post', args=[self.slug])
-        
+
