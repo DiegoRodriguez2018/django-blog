@@ -4,31 +4,37 @@
   {% load bootstrap4 %}
   {% bootstrap_css %}
   {% bootstrap_javascript%}
-
   {% load static %}
-  <link rel="stylesheet" href="{%static 'css/styles.css'%}" />
-  <title> 
-  {% block title%}
+  <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+  <link href="blog.css" rel="stylesheet">
+  <title>
+    {% block title%}
     My Blog.
-  {% endblock %}  
+    {% endblock %}
   </title>
 
 </head>
 
 <body>
+  <div class="container">
+    <div class="nav-scroller py-1 mb-2">
+      <nav class="nav d-flex justify-content-between">
+        <li role="presentation" class="p-2 text-muted"><a href="/">Home</a></li>
+        <li role="presentation" class="p-2 text-muted"><a href="/">Random</a></li>
+        <li role="presentation" class="p-2 text-muted"><a href="/about">About</a></li>
+      </nav>
+    </div>
 
-<nav class="navbar navbar-inverse">    
-    <li role="presentation" class="active"><a href="/">Home</a></li>
-    <li role="presentation"><a href="/">Random</a></li>
-    <li role="presentation"><a href="/about">About</a></li>
-</nav>
+
+    <div id="content">
+      {% block content %}
+      This is a fallback template.
+      {% endblock %}
+    </div>
 
 
-<div id="content">
-  {% block content %}
-    This is a fallback template.
-  {% endblock  %}
-</div>
+  </div>
 
 
 </body>
