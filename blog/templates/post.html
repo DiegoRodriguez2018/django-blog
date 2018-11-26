@@ -1,10 +1,13 @@
-{% load bootstrap4 %}
-{% bootstrap_css %}
-{% bootstrap_javascript%}
+{% extends 'base.html'%}
 
-<a href="/"> Back to index</a> <br>
+{% block title%}
+    {{ post.title }}
+{% endblock%}
 
 
-<h1>{{post.title}} </h1>
+{% block content%}
+    <a href="/"> Back to index</a> <br>
 
-<p>{{post.content}} </p>
+    <h1  class="jumbotron p-3 p-md-5 text-white rounded bg-dark font-italic"> {{post.title}} </h1>
+    <p class="lead my-3">{{post.content}} </p>
+{% endblock%}
